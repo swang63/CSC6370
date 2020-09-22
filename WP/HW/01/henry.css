@@ -1,0 +1,72 @@
+
+/*
+This is the external style sheet for my css that points to nba_table.html
+enjoy, Cheers and happy coding 
+*/
+/* using 2 selectors ".henry-table and .centered-table"  along with properties and values */
+
+.henry-table.centered-table  {
+    border: solid 0px #DDEEEE;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 150px;
+	width: 50%;
+    height: 50%;
+}
+
+/* create the rounded corners Properties are : 
+border-top-left-radius, 
+border-top-right-radius, 
+border-bottom-right-radius, 
+and border-bottom-left-radius 
+can also be used to target specific corners.*/ 
+
+.henry-table thead th:first-child {
+    border-radius: 52px 0 0 0;
+}
+.henry-table thead th:last-child {
+    border-radius: 0 52px 0 0;
+}
+.henry-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 52px 0;
+}
+.henry-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 52px;
+}
+
+
+/*  Define the background color for all the ODD background rows using class selector
+create the zebra-striped
+ */
+
+	.henry-table tr:nth-child(odd) { 
+	  background: #b8d1f3;
+	}
+  
+/*  Define the background color for all the EVEN background rows  */
+  
+	.henry-table tr:nth-child(even){
+		background: #dae5f4;
+ 
+}
+.henry-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+        
+}
+.henry-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+
+
+

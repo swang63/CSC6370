@@ -1,0 +1,24 @@
+How to set up tje CSS External Style Sheet and html file 
+
+External Style Sheets
+ 
+
+An external style sheet holds all the style rules in a separate document that you can link from any HTML file on your site. 
+
+You can attach external style sheets in two ways — linking and importing.
+
+Linking External Style Sheets
+
+Before linking, we need to create a style sheet first - see henry.css
+
+
+How to Connect a CSS External Style Sheet to HTML File
+
+
+To link CSS to an HTML file, we use the <link> tag that you put in the HTML’s <head> section. The link will look like this:
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+Conclusion
+While there are many ways to link CSS to HTML, the best method to do it is to use the HTML’s <link> tag.
+ By using this method, you’ll get to save time and code more efficiently without affecting your website’s visual representation
