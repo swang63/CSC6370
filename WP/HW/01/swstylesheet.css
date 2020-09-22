@@ -41,12 +41,6 @@ table tr td{
 .zebratable tr:nth-child(even) { 
     background: #3a9b42;
 }
-ul.b{
-    list-style-type: square;
-}
-ul.a{
-    list-style-type: circle;
-}
 span{
     color:red;
     font-weight:bold;

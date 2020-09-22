@@ -1,0 +1,5 @@
+http://codd.cs.gsu.edu/~swang63/home.html
+
+this page will redirect to...
+
+https://codd.cs.gsu.edu/~swang63/WP/HW/01/index.html
