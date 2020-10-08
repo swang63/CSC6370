@@ -1,0 +1,323 @@
+body {
+  background-image: url("Background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+h1 {
+  color:white;
+}
+/*betting functions*/
+.bet {
+  opacity: 0;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-duration: 1s;
+}
+.newbank {
+  opacity: 0;
+  animation-name: fadein, fadeout;
+  animation-fill-mode: forwards;
+  animation-delay: 2s, 12s;
+  animation-duration: 1s;
+}
+.old {
+  opacity: 1;
+  animation-name: fadeout;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-duration:1s;
+}
+.final {
+  opacity: 0;
+  animation: 2s fadein;
+  animation-fill-mode: forwards;
+  animation-delay: 13s;
+}
+.bets {
+  width:300px;
+  height:150px;
+  float:left;
+  position: relative;
+  background-color:burlywood;
+  margin:10px;
+}
+.bank {
+  width:300px;
+  height:150px;
+  float:left;
+  position: relative;
+  background-color:burlywood;
+  margin:10px;
+}
+.bets p {
+  color: red;
+  font-size: 18pt;
+  position: absolute;
+  top: 30px;
+}
+.bank p {
+  color: black;
+  font-size: 18pt;
+  position: absolute;
+  top: 30px;
+}
+.increase {
+  position: absolute;
+  top: 100px;
+  left: 25px;   
+}
+.decrease {
+  position: absolute;
+  top: 100px;
+}
+.hit {
+  position: absolute;
+  top: 100px;
+  left: 70px;
+}
+.stay {
+  position: absolute;
+  top: 100px;
+  left: 110px;
+}
+/*div containers*/ 
+.Content {
+    width:640px;
+    background-color: rgb(110, 70, 9);
+    display:block;
+}
+.interface:after{
+  content:"";
+  display:table;
+  clear:both;
+  padding:10px;
+}   
+.table{
+  width: 600px;
+  height: 500px;
+  background-color:green;
+  margin:10px;
+}
+/*card settings and animations*/
+.deck {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  z-index:1;
+}
+.discardpile {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  z-index: 1;
+  top:250px;
+  left:500px;
+}
+.play1 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: play1, flip-card, discard-play1;
+  animation-duration: 2s, 2s, 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 4s, 4s, 15s;
+}
+.play2 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: play2, flip-card, discard;
+  animation-duration: 2s, 2s, 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 6s, 6s, 15s;
+}
+.play3 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: play3, flip-card,discard;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 9s, 9s, 15s;
+}
+.deal1 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: dealer1, flip-back;
+  animation-duration: 2s, .5s;  
+  animation-fill-mode: forwards;
+  animation-delay: 5s, 11s;
+}
+.deal1-noflip {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: dealer1, discard-dealer;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 5s, 15s;
+}
+.deal1-back {
+  left: 200px;
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  opacity: 0;
+  animation: 2s flip, discard-deal;
+  animation-fill-mode: forwards;
+  animation-delay: 11s, 15s;
+  animation-duration:2s;
+  transform: rotateY(180deg);
+}
+.deal2 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: dealer2, discard-dealer;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 7s, 15s;
+}
+.deal3 {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  animation-name: dealer3, discard-dealer;
+  animation-duration: 2s;  
+  animation-fill-mode: forwards;
+  animation-delay: 11s, 15s;
+}
+/*end round text */
+.round-text {
+  opacity: 0;
+  backdrop-filter: blur(4px);
+  width: 600px;
+  height: 500px;
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  color: rgb(156, 5, 5);
+  z-index: 3;
+  filter:blur(0px);
+  filter: none;
+  animation: 5s fadein;
+  animation-fill-mode: forwards;
+  animation-delay: 13s;
+}
+.round-text p {
+  opacity: 0;
+  margin-top: 200px;
+  animation: 5s fadein;
+  animation-delay: 13s;
+  animation-fill-mode:forwards;
+}
+
+/*CSS animations */
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0;}
+}
+@keyframes fadein{
+  0% { opacity: 0; }
+  100%   { opacity: 1;}
+}
+/*CSS card animations */
+@keyframes flip-back {
+  from { opacity: 1;}
+  to { opacity: 0; }
+}
+@keyframes flip-card {
+  100% { transform: rotate(180deg);}
+}
+
+@keyframes flip {
+  100% { transform: rotate(180deg);}
+}
+  
+@keyframes flip {
+  from{ opacity: 0;}
+  to { z-index: 2;
+    opacity: 1;
+    transform: rotateY(0deg);}
+}
+
+@keyframes play1 {
+  from {top: 100px;}
+  to {top: 400px; 
+    transform:rotate(180deg)}
+}
+@keyframes play2 {
+  from {top: 100px;}
+  to {top: 400px; left: 120px;
+    transform:rotate(180deg)}
+}
+@keyframes play3 {
+  from {top: 100px;}
+  to {top: 400px; left: 225px;
+    transform:rotate(180deg)}
+}
+
+@keyframes dealer1 {
+  from {top: 100px;}
+  to { transform:translate(200px);}
+}
+@keyframes dealer2 {
+  from {top: 100px;}
+  to { transform:translate(300px);}
+}
+
+@keyframes dealer3 {
+  from {top: 100px;}
+  to { transform:translate(400px);}
+}
+/* Discard Animations */
+@keyframes discard-dealer {
+  to{transform: translate(480px, 170px);}
+}
+
+@keyframes discard-play1 {
+  to { transform: translate(480px,-150px);}
+}
+
+@keyframes discard-deal {
+  to { transform: translate(300px, 170px);}
+}
+
+@keyframes discard {
+  to { position: absolute;
+    top: 250px; left: 500px;}
+}
+/*Deck color changing */
+#deck-images img {
+  width: 100px;
+  height: 140px;
+  position: absolute;
+  z-index: 1;
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-duration: 8s;
+}
+
+@keyframes cf4FadeInOut {
+  0% { opacity:1;}
+  17% { opacity:1;}
+  25% { opacity:0;}
+  92% { opacity:0;}
+  100% { opacity:1;}
+}
+
+#deck-images img:nth-of-type(1) {
+  animation-delay: 6s;
+}
+#deck-images img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+#deck-images img:nth-of-type(3) {
+  animation-delay: 2s;
+}
+#deck-images img:nth-of-type(4) {
+  animation-delay: 0;
+}
