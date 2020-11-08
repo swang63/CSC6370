@@ -1,0 +1,6 @@
+fieldset {
+	background-color: #E0E0FF;
+	border: 2px outset gray;
+    border-radius: 10px;
+    width: 500px;
+}
